@@ -1,0 +1,34 @@
+#Assignment multilevel inheritance with declaring class with init
+class Student:
+    def __init__(self,name,rolln):
+        self.name=name
+        self.rolln= rolln
+    def getStudent(self):
+        self.name=input("Enter your name     :")
+        self.rolln=int(input("Enter your roll number   :"))
+    def printStudentInfo(self):
+        print("roll number: ",self.rolln,"name: ",self.name)
+class Bsc(Student):
+     def __init__(self,english,maths,science):
+         self.english=english
+         self.maths=maths
+         self.science=science
+     def getbsc(self):
+         self.english=int(input("Enter your english marks:   "))
+         self.maths=int(input("Enter your maths marks:       "))
+         self.science=int(input("Enter your science marks:    "))
+     def putperks(self):
+         print(self.name,"english mark is",self.english,"maths marks is",self.maths,"science mark is",self.science)
+     def calctotalmark(self):
+         totalmark=(self.english+self.maths+self.science)
+         return totalmark
+class Result(Bsc):
+      def printresult(self):
+          print("the result is",self.calctotalmark())
+std=Result('','','')
+std.getStudent()
+std.printStudentInfo()
+std.getbsc()
+std.putperks()
+std.calctotalmark()
+std.printresult()
